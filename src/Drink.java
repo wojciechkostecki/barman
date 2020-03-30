@@ -1,35 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Drink {
-    Ingredient ingredient1;
-    Ingredient ingredient2;
-    Ingredient ingredient3;
+    List<Ingredient> ingredientList = new ArrayList<>();
 
-    public Drink(Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3) {
-        this.ingredient1 = ingredient1;
-        this.ingredient2 = ingredient2;
-        this.ingredient3 = ingredient3;
+    public Drink(List<Ingredient> ingredientList) {
+        this.ingredientList = ingredientList;
     }
 
-    public Ingredient getIngredient1() {
-        return ingredient1;
+    public List<Ingredient> getIngredientList() {
+        return ingredientList;
     }
 
-    public void setIngredient1(Ingredient ingredient1) {
-        this.ingredient1 = ingredient1;
+    public void setIngredientList(List<Ingredient> ingredientList) {
+        this.ingredientList = ingredientList;
     }
 
-    public Ingredient getIngredient2() {
-        return ingredient2;
-    }
-
-    public void setIngredient2(Ingredient ingredient2) {
-        this.ingredient2 = ingredient2;
-    }
-
-    public Ingredient getIngredient3() {
-        return ingredient3;
-    }
-
-    public void setIngredient3(Ingredient ingredient3) {
-        this.ingredient3 = ingredient3;
+    @Override
+    public String toString() {
+        return "Na drinka składają się: " + ingredientList;
     }
 }

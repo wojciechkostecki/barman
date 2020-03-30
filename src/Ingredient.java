@@ -22,4 +22,9 @@ public class Ingredient {
     public void setAmountOfIngredient(double amountOfIngredient) {
         this.amountOfIngredient = amountOfIngredient;
     }
+
+    @Override
+    public String toString() {
+        return "Nazwa składnika: " + ingredientName + ", ilość składnika: " + amountOfIngredient + " ml.";
+    }
 }
