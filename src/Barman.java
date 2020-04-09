@@ -24,7 +24,7 @@ public class Barman {
 
     private static void printDrink(Drink drink) {
         System.out.print("Składniki drinka to:");
-        drink.getIngredientList().forEach(x -> System.out.print(" " + x.getIngredientName() + ","));
+        drink.getIngredientList().forEach(x -> System.out.print(" " + x.getName() + ","));
         System.out.print(" w proporcjach ");
         proportionsIngredients(drink);
         System.out.print("Jego pojemność to " + amountDrink(drink) + " ml.");
@@ -33,7 +33,7 @@ public class Barman {
     private static int amountDrink(Drink drink) {
         int amountDrink = 0;
         for (Ingredient ingredient : drink.getIngredientList()) {
-            amountDrink += ingredient.getAmountOfIngredient();
+            amountDrink += ingredient.getAmount();
         }
         return amountDrink;
     }
@@ -41,7 +41,7 @@ public class Barman {
     private static void proportionsIngredients(Drink drink){
         StringBuilder stringBuilder = new StringBuilder();
         for (Ingredient ingredient : drink.getIngredientList()) {
-            double proportion = ingredient.getAmountOfIngredient()/amountDrink(drink);
+            double proportion = ingredient.getAmount()/amountDrink(drink);
             stringBuilder.append(proportion).append(",");
         }
         stringBuilder.deleteCharAt(stringBuilder.length()-1);

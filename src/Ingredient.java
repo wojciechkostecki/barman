@@ -1,30 +1,30 @@
 public class Ingredient {
-    String ingredientName;
-    double amountOfIngredient;
+    String name;
+    double amount;
 
-    public Ingredient(String ingredientName, double amountOfIngredient) {
-        this.ingredientName = ingredientName;
-        this.amountOfIngredient = amountOfIngredient;
+    public Ingredient(String name, double amount) {
+        this.name = name;
+        this.amount = amount;
     }
 
-    public String getIngredientName() {
-        return ingredientName;
+    public String getName() {
+        return name;
     }
 
-    public void setIngredientName(String ingredientName) {
-        this.ingredientName = ingredientName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getAmountOfIngredient() {
-        return amountOfIngredient;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setAmountOfIngredient(double amountOfIngredient) {
-        this.amountOfIngredient = amountOfIngredient;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     @Override
     public String toString() {
-        return "Nazwa składnika: " + ingredientName + ", ilość składnika: " + amountOfIngredient + " ml.";
+        return "Nazwa składnika: " + name + ", ilość składnika: " + amount + " ml.";
     }
 }

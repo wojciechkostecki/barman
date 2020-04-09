@@ -2,22 +2,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Drink {
-    List<Ingredient> ingredientList = new ArrayList<>();
+    List<Ingredient> ingredients = new ArrayList<>();
 
     public Drink(List<Ingredient> ingredientList) {
-        this.ingredientList = ingredientList;
+        this.ingredients = ingredientList;
     }
 
     public List<Ingredient> getIngredientList() {
-        return ingredientList;
+        return ingredients;
     }
 
     public void setIngredientList(List<Ingredient> ingredientList) {
-        this.ingredientList = ingredientList;
+        this.ingredients = ingredientList;
     }
 
     @Override
     public String toString() {
-        return "Na drinka składają się: " + ingredientList;
+        return "Na drinka składają się: " + ingredients;
     }
 }
