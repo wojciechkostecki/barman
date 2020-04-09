@@ -1,5 +1,5 @@
 public class Ingredient {
-    String ingredientName;
+    String name;
     double amountOfIngredient;
 
     public Ingredient(String ingredientName, double amountOfIngredient) {
