@@ -11,15 +11,19 @@ public class Barman {
         Scanner scanner = new Scanner(System.in);
         List<Ingredient> ingredients = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            System.out.println("Podaj nazwę składnika: ");
-            String name = scanner.nextLine();
-            System.out.println("Podaj ilość składnika w mililitrach: ");
-            int amount = scanner.nextInt();
-            scanner.nextLine();
-            Ingredient ingredient = new Ingredient(name, amount);
+            Ingredient ingredient = loadIngredient(scanner);
             ingredients.add(ingredient);
         }
         return new Drink(ingredients);
+    }
+
+    private static Ingredient loadIngredient(Scanner scanner) {
+        System.out.println("Podaj nazwę składnika: ");
+        String name = scanner.nextLine();
+        System.out.println("Podaj ilość składnika w mililitrach: ");
+        int amount = scanner.nextInt();
+        scanner.nextLine();
+        return new Ingredient(name, amount);
     }
 
     private static void printDrink(Drink drink) {
