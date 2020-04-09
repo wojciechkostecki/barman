@@ -3,11 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Barman {
-    public static void main(String[] args) {
-        printDrink(createDrink());
-    }
-
-    private static Drink createDrink() {
+    public Drink createDrink() {
         Scanner scanner = new Scanner(System.in);
         List<Ingredient> ingredients = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
@@ -17,7 +13,7 @@ public class Barman {
         return new Drink(ingredients);
     }
 
-    private static Ingredient loadIngredient(Scanner scanner) {
+    private Ingredient loadIngredient(Scanner scanner) {
         System.out.println("Podaj nazwę składnika: ");
         String name = scanner.nextLine();
         System.out.println("Podaj ilość składnika w mililitrach: ");
@@ -26,7 +22,7 @@ public class Barman {
         return new Ingredient(name, amount);
     }
 
-    private static void printDrink(Drink drink) {
+    public void printDrink(Drink drink) {
         System.out.print("Składniki drinka to:");
         drink.getIngredientList().forEach(x -> System.out.print(" " + x.getName() + ","));
         System.out.print(" w proporcjach ");
@@ -34,7 +30,7 @@ public class Barman {
         System.out.print("Jego pojemność to " + amountDrink(drink) + " ml.");
     }
 
-    private static int amountDrink(Drink drink) {
+    private int amountDrink(Drink drink) {
         int amountDrink = 0;
         for (Ingredient ingredient : drink.getIngredientList()) {
             amountDrink += ingredient.getAmount();
@@ -42,7 +38,7 @@ public class Barman {
         return amountDrink;
     }
 
-    private static void proportionsIngredients(Drink drink){
+    private void proportionsIngredients(Drink drink){
         StringBuilder stringBuilder = new StringBuilder();
         for (Ingredient ingredient : drink.getIngredientList()) {
             double proportion = ingredient.getAmount()/amountDrink(drink);
