@@ -1,10 +1,6 @@
 public class Ingredient {
     String name;
-<<<<<<< HEAD
     double amount;
-=======
-    double amountOfIngredient;
->>>>>>> deaf9fece5f331f1dcb45b1c9e91df5a04257ba2
 
     public Ingredient(String name, double amount) {
         this.name = name;
