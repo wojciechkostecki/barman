@@ -1,6 +1,6 @@
 public class Ingredient {
-    String name;
-    double amount;
+    private String name;
+    private double amount;
 
     public Ingredient(String name, double amount) {
         this.name = name;

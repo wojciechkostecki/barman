@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Drink {
-    List<Ingredient> ingredients = new ArrayList<>();
+    private List<Ingredient> ingredients = new ArrayList<>();
 
     public Drink(List<Ingredient> ingredientList) {
         this.ingredients = ingredientList;
@@ -38,5 +38,13 @@ public class Drink {
         stringBuilder.deleteCharAt(stringBuilder.length()-1);
         stringBuilder.append(". ");
         System.out.print(stringBuilder);
+    }
+
+    public static void printDrink(Drink drink) {
+        System.out.print("Składniki drinka to:");
+        drink.getIngredientList().forEach(x -> System.out.print(" " + x.getName() + ","));
+        System.out.print(" w proporcjach ");
+        drink.calculateProportions(drink);
+        System.out.print("Jego pojemność to " + drink.calculateAmount(drink) + " ml.");
     }
 }
