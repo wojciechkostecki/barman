@@ -1,25 +1,12 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public class Barman {
-    Scanner scanner = new Scanner(System.in);
 
-    public Drink createDrink() {
-        List<Ingredient> ingredients = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            Ingredient ingredient = loadIngredient();
-            ingredients.add(ingredient);
-        }
-        return new Drink(ingredients);
-    }
+    public Drink createDrink(String nameIngredient1, int amountIngredient1, String nameIngredient2, int amountIngredient2,
+                            String nameIngredient3, int amountIngredient3) {
 
-    private Ingredient loadIngredient() {
-        System.out.println("Podaj nazwę składnika: ");
-        String name = scanner.nextLine();
-        System.out.println("Podaj ilość składnika w mililitrach: ");
-        int amount = scanner.nextInt();
-        scanner.nextLine();
-        return new Ingredient(name, amount);
+        Ingredient ingredient1 = new Ingredient(nameIngredient1,amountIngredient1);
+        Ingredient ingredient2 = new Ingredient(nameIngredient2,amountIngredient2);
+        Ingredient ingredient3 = new Ingredient(nameIngredient3,amountIngredient3);
+
+        return new Drink(ingredient1, ingredient2, ingredient3);
     }
 }
